@@ -58,4 +58,8 @@ int get_width(const char *format, int *i, va_list list);
 int get_precision(const char *format, int *i, va_list list);
 int get_size(const char *format, int *i);
 
+/*functions for width*/
+int handle_write_char(char c, char buffer[],
+		int flags, int width, int precision, int size);
+
 #endif /*MAIN_H */

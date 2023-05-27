@@ -62,4 +62,7 @@ int get_size(const char *format, int *i);
 int handle_write_char(char c, char buffer[],
 		int flags, int width, int precision, int size);
 
+/****************** UTILS ******************/
+int is_digit(char);
+
 #endif /*MAIN_H */

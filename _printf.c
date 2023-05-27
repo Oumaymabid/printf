@@ -10,7 +10,7 @@ void print_buffer(char buff[], int *buff_i);
 int _printf(const char *format, ...)
 {
 	int j, p = 0, p_chars = 0;
-	int flags, width, precision, size, buff_d = 0;
+	int flags, width, precision, size, buff_i = 0;
 	va_list list;
 	char buff[BUFF_SIZE];
 
@@ -23,7 +23,7 @@ int _printf(const char *format, ...)
 	{
 		if (format[j] != '%')
 		{
-			buff[buff_j++] = format[j];
+			buff[buff_i++] = format[j];
 			if (buff_i == BUFF_SIZE)
 				print_buffer(buff, &buff_i);
 			/* write(1, &format[j], 1);*/

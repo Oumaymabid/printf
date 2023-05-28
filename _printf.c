@@ -1,6 +1,6 @@
 #include "main.h"
 
-void print_buffer(char buff[], int *buff_i);
+void print_buffer(char buffer[], int *buff_ind);
 
 /**
   *_printf - entry point
@@ -10,9 +10,9 @@ void print_buffer(char buff[], int *buff_i);
 int _printf(const char *format, ...)
 {
 	int j, p = 0, p_chars = 0;
-	int flags, width, precision, size, buff_i = 0;
+	int flags, width, precision, size, buff_ind = 0;
 	va_list list;
-	char buff[BUFF_SIZE];
+	char buffer[BUFF_SIZE];
 
 	if (format == NULL)
 		return (-1);
@@ -23,15 +23,15 @@ int _printf(const char *format, ...)
 	{
 		if (format[j] != '%')
 		{
-			buff[buff_i++] = format[j];
-			if (buff_i == BUFF_SIZE)
-				print_buffer(buff, &buff_i);
+			buffer[buff_ind++] = format[j];
+			if (buff_ind == BUFF_SIZE)
+				print_buffer(buffer, &buff_ind);
 			/* write(1, &format[j], 1);*/
 			p_chars++;
 		}
 		else
 		{
-			print_buffer(buff, &buff_i);
+			print_buffer(buffer, &buff_ind);
 			flags = get_flags(format, &j);
 			width = get_width(format, &j, list);
 			precision = get_precision(format, &j, list);
@@ -44,18 +44,18 @@ int _printf(const char *format, ...)
 			p_chars += p;
 		}
 	}
-	print_buffer(buff, &buff_i);
+	print_buffer(buffer, &buff_ind);
 	va_end(list);
 	return (p_chars);
 }
 /**
   *print_buffer -  prints buffer content
-  *@buff: input
-  *@buff_i: input
+  *@buffer: input
+  *@buff_ind: input
   */
-void print_buffer(char buff[], int *buff_i)
+void print_buffer(char buffer[], int *buff_ind)
 {
-	if (*buff_i > 0)
-		write(1, &buff[0], *buff_i);
-	*buff_i = 0;
+	if (*buff_ind > 0)
+		write(1, &buffer[0], *buff_ind);
+	*buff_ind = 0;
 }

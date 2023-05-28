@@ -30,12 +30,12 @@ struct fmt
 };
 
 /**
- * typedef struct fmt fm_t - Struct op
+ * typedef struct fmt fmt_t - Struct op
  *
  *@fmt: input
  *@fm_t: input
  */
-typedef struct fmt fm_t;
+typedef struct fmt fmt_t;
 
 int _printf(const char *format, ...);
 int handle_print(const char *fmt, int *i,

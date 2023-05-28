@@ -31,7 +31,7 @@ int print_unsigned(va_list types, char buffer[],
 
 	i++;
 
-	return (write_unsgnd(0, i, buffer, flags, width, precision, size));
+	return (write_unsignd(0, i, buffer, flags, width, precision, size));
 }
 
 /**
@@ -132,7 +132,7 @@ int print_hexa(va_list types, char map_to[], char buffer[],
 		buffer[i--] = '0';
 	}
 
-	i++
+	i++;
 
 	return (write_unsgnd(0, i, buffer, flags, width, precision, size));
 }

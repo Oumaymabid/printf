@@ -1,15 +1,15 @@
 #include "main.h"
 
 /**
-  *print_char - entry point
-  *@types: input
-  *@buffer: input
-  *@flags: input
-  *@width: input
-  *@precision: input
-  *@size: input
-  *Return: printed chars
-  */
+ * print_char - entry point
+ * @types: input
+ * @buffer: input
+ * @flags: input
+ * @width: input
+ * @precision: input
+ * @size: input
+ * Return: printed chars
+ */
 int print_char(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
@@ -19,15 +19,15 @@ int print_char(va_list types, char buffer[],
 }
 
 /**
-  *print_string -  entry point
-  *@types: input
-  *@buffer: input
-  *@flags: input
-  *@width: input
-  *@precision: input
-  *@size: input
-  *Return: printed strings
-  */
+ * print_string -  entry point
+ * @types: input
+ * @buffer: input
+ * @flags: input
+ * @width: input
+ * @precision: input
+ * @size: input
+ * Return: printed strings
+ */
 int print_string(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
@@ -70,15 +70,15 @@ int print_string(va_list types, char buffer[],
 }
 
 /**
-  *print_percent - entry point
-  *@types: input
-  *@buffer: input
-  *@flags: input
-  *@width: input
-  *@precision: input
-  *@size: input
-  *Return: printed %
-  */
+ * print_percent - entry point
+ * @types: input
+ * @buffer: input
+ * @flags: input
+ * @width: input
+ * @precision: input
+ * @size: input
+ * Return: printed %
+ */
 int print_percent(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
@@ -92,15 +92,15 @@ int print_percent(va_list types, char buffer[],
 }
 
 /**
-  *print_int -  entry point
-  *@types: input
-  *@buffer: input
-  *@flags: input
-  *@width: input
-  *@precision: input
-  *@size: input
-  *Return: printed int
-  */
+ * print_int -  entry point
+ * @types: input
+ * @buffer: input
+ * @flags: input
+ * @width: input
+ * @precision: input
+ * @size: input
+ * Return: printed int
+ */
 int print_int(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
@@ -132,15 +132,15 @@ int print_int(va_list types, char buffer[],
 }
 
 /**
-  *print_binary - entry point
-  *@types: input
-  *@buffer: input
-  *@flags: input
-  *@width: input
-  *@precision: input
-  *@size: input
-  *Return: printed binary
-  */
+ * print_binary - entry point
+ * @types: input
+ * @buffer: input
+ * @flags: input
+ * @width: input
+ * @precision: input
+ * @size: input
+ * Return: printed binary
+ */
 int print_binary(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {

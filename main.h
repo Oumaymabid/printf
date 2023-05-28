@@ -95,7 +95,7 @@ int write_number(int is_positive, int i, char buffer[],
 int write_num(int i, char buffer[], int flags, int width, int precision,
 		int length, char padd, char extra_c);
 int write_pointer(char buffer[], int i, int length,
-		int width, int flags, char padd, char extra_c, int_padd_start);
+		int width, int flags, char padd, char extra_c, int padd_start);
 
 int write_unsigned(int is_negative, int i,
 char buffer[],

@@ -66,3 +66,18 @@ long int convert_size_number(long int num, int size)
 		return ((int)num);
 	return ((unsigned int)num);
 }
+
+/**
+  *convert_size_unsgnd - entry point
+  *@num: input
+  *@size: input
+  *Return: value
+  */
+long int convert_size_unsgnd(unsigned long int num, int size)
+{
+	if (size == S_LONG)
+		return (num);
+	else if (size == S_SHORT)
+		return ((unsigned short)num);
+	return ((unsigned int)num);
+}

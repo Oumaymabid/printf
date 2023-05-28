@@ -31,7 +31,7 @@ int print_unsigned(va_list types, char buffer[],
 
 	i++;
 
-	return (write_unsigned(0, i, buffer, flags, width, precision, size));
+	return (write_unsgnd(0, i, buffer, flags, width, precision, size));
 }
 
 /**
@@ -84,15 +84,15 @@ int print_octal(va_list types, char buffer[],
  * @size: size
  * Return: chars printed
  */
-int print_hexa_upper(va_list types, char buffer[],
+int print_hexadecimal(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
-	return (print_hexa(types, "0123456789ABCDEF", buffer,
-		flags, 'X', width, precision, size));
+	return (print_hexa(types, "0123456789abcdef", buffer,
+		flags, 'x', width, precision, size));
 }
 
 /**
- * print_hexa - prints a hexadecimal number in lower of upper
+ * print_hexa_upper - prints a upper hexadecimal notation
  * @types: list of arguments
  * @map_to: map the number
  * @buffer: buffer array
@@ -104,6 +104,26 @@ int print_hexa_upper(va_list types, char buffer[],
  * @size: sizespecification
  * Return: chars printed
  */
+int print_hexa_upper(va_list types, char buffer[],
+	int flags, int width, int precision, int size)
+{
+	return (print_hexa(types, "0123456789ABCDEF", buffer,
+		flags, 'X', width, precision, size));
+}
+
+/**
+  *print_hexa - entry point
+  *@types: input
+  *@map_to: input
+  *@buffer: input
+  *@flags: input
+  *@flag_ch: input
+  *@width: input
+  *@precision: input
+  *@size: input
+  *@size: specification
+  *Return: chras printed
+  */
 int print_hexa(va_list types, char map_to[], char buffer[],
 	int flags, char flag_ch, int width, int precision, int size)
 {
@@ -131,8 +151,7 @@ int print_hexa(va_list types, char map_to[], char buffer[],
 		buffer[i--] = flag_ch;
 		buffer[i--] = '0';
 	}
-
 	i++;
-
 	return (write_unsgnd(0, i, buffer, flags, width, precision, size));
 }
+

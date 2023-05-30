@@ -94,10 +94,8 @@ int print_hexadecimal(va_list types, char buffer[],
 /**
  * print_hexa_upper - prints a upper hexadecimal notation
  * @types: list of arguments
- * @map_to: map the number
  * @buffer: buffer array
  * @flags: active flags
- * @flag_ch: active flags
  * @width: width
  * @precision: precision
  * @size: size
@@ -154,4 +152,3 @@ int print_hexa(va_list types, char map_to[], char buffer[],
 	i++;
 	return (write_unsgnd(0, i, buffer, flags, width, precision, size));
 }
-

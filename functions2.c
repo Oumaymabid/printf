@@ -42,6 +42,7 @@ int print_pointer(va_list types, char buffer[],
 	else if (flags & F_SPACE)
 		extra_c = ' ', length++;
 	ind++;
+
 	/*return (write(1, &buffer[i], BUFF_SIZE - i - 1));*/
 	return (write_pointer(buffer, ind, length,
 		width, flags, padd, extra_c, padd_start));
@@ -81,6 +82,7 @@ int print_non_printable(va_list types, char buffer[],
 		i++;
 	}
 	buffer[i + offset] = '\0';
+
 	return (write(1, buffer, i + offset));
 }
 
@@ -94,6 +96,7 @@ int print_non_printable(va_list types, char buffer[],
   *@size: input
   *Return: printed chars
   */
+
 int print_reverse(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
@@ -111,9 +114,11 @@ int print_reverse(va_list types, char buffer[],
 	{
 		UNUSED(precision);
 
-		str = ")NULL(";
+		str = ")Null(";
 	}
 	for (i = 0; str[i]; i++)
+		;
+
 	for (i = i - 1; i >= 0; i--)
 	{
 		char z = str[i];
